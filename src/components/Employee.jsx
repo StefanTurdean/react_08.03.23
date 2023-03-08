@@ -2,8 +2,7 @@ import React from "react";
 import { Fragment } from "react";
 
 export const Employee = (props) => {
-  const { firstName, lastName, age } = props;
-  console.log(firstName, typeof(firstName));
+  const { firstName, age, lastName  } = props;
   return (
     <Fragment>
       <h6>

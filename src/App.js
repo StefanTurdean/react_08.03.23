@@ -6,21 +6,28 @@ const employeeInfo = [
     firstName: "Jack",
     lastName: "Smith",
     age: "21",
+    employeeId: "js"
+
   },
   {
     firstName: "Stephanie",
     lastName: "A",
     age: "22",
+    employeeId: "sa"
+
   },
   {
     firstName: "George",
     lastName: "B",
     age: "22",
+    employeeId: "gb"
+
   },
   {
     firstName: "Anthony",
     lastName: "C",
     age: "22",
+    employeeId: "ac"
   },
 ];
 
@@ -33,9 +40,10 @@ function App() {
 
         {/* rendering the employee list with map using the spread operator */}
 
-        {/* {employeeInfo.map(spreadEmployeeInfo => {
+        {employeeInfo.map(spreadEmployeeInfo => {
+          console.log(spreadEmployeeInfo);
           return <Employee key={spreadEmployeeInfo.employeeId} {...spreadEmployeeInfo} />
-        })} */}
+        })}
 
 
 
