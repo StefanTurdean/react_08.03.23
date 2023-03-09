@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import { Employee } from "./components/Employee";
 
@@ -6,46 +7,66 @@ const employeeInfo = [
     firstName: "Jack",
     lastName: "Smith",
     age: "21",
-    employeeId: "js"
-
+    employeeId: "js",
   },
   {
     firstName: "Stephanie",
     lastName: "A",
     age: "22",
-    employeeId: "sa"
-
+    employeeId: "sa",
   },
   {
     firstName: "George",
     lastName: "B",
     age: "22",
-    employeeId: "gb"
-
+    employeeId: "gb",
   },
   {
     firstName: "Anthony",
     lastName: "C",
     age: "22",
-    employeeId: "ac"
+    employeeId: "ac",
   },
 ];
 
 function App() {
+  const [loggedIn, setloggedIn] = useState(false);
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Company Directory</h1>
+        <h1>Welcome To My App</h1>
 
+        {!loggedIn && <h2>Please Log In</h2>}
+
+        <button onClick={() => setloggedIn(!loggedIn)}>
+          {loggedIn ? "Log out" : "Login"}
+        </button>
+
+        {loggedIn ? (
+          employeeInfo.map((spreadEmployeeInfo) => {
+            console.log(spreadEmployeeInfo);
+            return (
+              <Employee
+                key={spreadEmployeeInfo.employeeId}
+                {...spreadEmployeeInfo}
+              />
+            );
+          })
+        ) : (
+          <div>Plese login</div>
+        )}
 
         {/* rendering the employee list with map using the spread operator */}
 
-        {employeeInfo.map(spreadEmployeeInfo => {
+        {/* {employeeInfo.map((spreadEmployeeInfo) => {
           console.log(spreadEmployeeInfo);
-          return <Employee key={spreadEmployeeInfo.employeeId} {...spreadEmployeeInfo} />
-        })}
-
-
+          return (
+            <Employee
+              key={spreadEmployeeInfo.employeeId}
+              {...spreadEmployeeInfo}
+            />
+          );
+        })} */}
 
         {/* rendering the employee list with map */}
 

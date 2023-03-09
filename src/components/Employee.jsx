@@ -2,7 +2,7 @@ import React from "react";
 import { Fragment } from "react";
 
 export const Employee = (props) => {
-  const { firstName, age, lastName  } = props;
+  const { firstName, lastName, age } = props;
   return (
     <Fragment>
       <h6>
